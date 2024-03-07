@@ -1,35 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { FC } from "react"
+import Card from "./Card";
+import hamilton from '/hamilton.png'
+import leclerc from '/leclerc.png'
+import vettel from '/vettel.png'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App:FC = () => {
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  return <div className="main-cont">
+                <h1 className="title-txt">2019 Canadian GP</h1>
+                <div className="inner-cont">
+                    <Card img={vettel}  position="2nd" name="Sebastian Vettel" team="Ferrari"/>
+                    <Card img={hamilton}  position="1st" name="Lewis Hamilton" team="Mercedes"/>
+                    <Card img={leclerc}  position="3rd" name="Charles Leclerc" team="Ferrari"/>
+                </div>
+          </div>
+
 }
 
-export default App
+export default App;
